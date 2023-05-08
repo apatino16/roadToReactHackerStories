@@ -56,6 +56,7 @@ const App = () => {
       </InputWithLabel>
 
       <hr />
+
       <List list={searchedStories} />
     </div>
   );
@@ -86,11 +87,10 @@ const InputWithLabel = ({
       &nbsp;
       {/*B*/}
       <input
-        ref={inputRef}
         id={id}
+        ref={inputRef}
         type={type}
         value={value}
-        autoFocus={isFocused}
         onChange={onInputChange}
       />
     </>
