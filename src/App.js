@@ -72,6 +72,10 @@ const InputWithLabel = ({
   // A
   const inputRef = React.useRef();
 
+  // C
+  React.useEffect(()=>{
+    if (isFocused && inputRef.current)}, [isFocused]);
+
   return (
     <>
       <label htmlFor={id}>{children}</label>
