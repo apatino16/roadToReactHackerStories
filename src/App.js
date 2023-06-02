@@ -1,5 +1,7 @@
 import * as React from "react";
 
+const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?query=";
+
 const useSemiPersistentState = (key, initialState) => {
   const [value, setValue] = React.useState(
     localStorage.getItem(key) || initialState
@@ -41,7 +43,6 @@ const storiesReducer = (state, action) => {
   }
 };
 
-const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?query=";
 const App = () => {
   const [searchTerm, setSearchTerm] = useSemiPersistentState("search", "React");
 
@@ -77,10 +78,6 @@ const App = () => {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
-
-  const searchedStories = stories.data.filter((story) =>
-    story.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-  );
 
   return (
     <div>
