@@ -1,6 +1,8 @@
 import * as React from "react";
 import axios from "axios";
+
 import styled from "styled-components";
+import { ReactComponent as Check } from "./check.svg";
 
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?query=";
 
@@ -254,9 +256,9 @@ const Item = ({ item, onRemoveItem }) => (
     <StyledColumn width="30%"> {item.author}</StyledColumn>
     <StyledColumn width="10%"> {item.num_comments}</StyledColumn>
     <StyledColumn width="10%">{item.points}</StyledColumn>
-    <StyledColumn style={{ width: "10%" }}>
+    <StyledColumn width="10%">
       <StyledButtonSmall type="button" onClick={() => onRemoveItem(item)}>
-        Dismiss
+        <Check height="18px" width="18px" />
       </StyledButtonSmall>
     </StyledColumn>
   </StyledItem>
